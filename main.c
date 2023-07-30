@@ -61,3 +61,62 @@ int main(void)
 
     return 0;
 }
+
+
+
+// de repente introduzir algo no loop pra mostrar que le lina a linha: tipo:
+   
+//     while ((line = get_next_line(fd1)) != NULL)
+//     {
+//         printf("linha lida:\n");
+//         printf("%s\n", line);
+//         free(line);
+//     }
+
+
+// FOR BONUS
+/* int main(void)
+{
+	int fd1, fd2, fd3;
+	char *line;
+
+	// Abrir os arquivos de texto
+	fd1 = open("file1.txt", O_RDONLY);
+	fd2 = open("file2.txt", O_RDONLY);
+	fd3 = open("file3.txt", O_RDONLY);
+
+	// Ler linhas do primeiro arquivo
+	line = get_next_line(fd1);
+	while (line != NULL)
+	{
+		printf("File 1: %s\n", line);
+		free(line);
+		line = get_next_line(fd1);
+	}
+
+	// Ler linhas do segundo arquivo
+	line = get_next_line(fd2);
+	while (line != NULL)
+	{
+		printf("File 2: %s\n", line);
+		free(line);
+		line = get_next_line(fd2);
+	}
+
+	// Ler linhas do terceiro arquivo
+	line = get_next_line(fd3);
+	while (line != NULL)
+	{
+		printf("File 3: %s\n", line);
+		free(line);
+		line = get_next_line(fd3);
+	}
+
+	// Fechar os arquivos
+	close(fd1);
+	close(fd2);
+	close(fd3);
+
+	return 0;
+}
+ */
