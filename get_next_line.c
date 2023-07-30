@@ -9,10 +9,9 @@ char    *ft_read_line(int fd, char *stash)
     int     number_of_bytes_read;
     char    *tmp_buffer;
 
-    tmp_buffer = malloc(sizeof(char*) * (BUFFER_SIZE + 1));
+    tmp_buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1)); //Allocate memory for the temporary buffer
     if(!tmp_buffer)
         return (NULL);
-
     number_of_bytes_read = 1; //to force entry in the while loop at least one time and check for empty files
     while(!ft_strchr(stash, '\n') && number_of_bytes_read != 0) //read until newline is found or end of file is reached
     {
@@ -26,7 +25,7 @@ char    *ft_read_line(int fd, char *stash)
         tmp_buffer[number_of_bytes_read] = '\0'; 
         if(!tmp_buffer)
             return (NULL);
-        stash = ft_strjoin(stash, tmp_buffer);
+        stash = ft_strjoin(stash, tmp_buffer); //append buffer to stash
     }
     free(tmp_buffer);
     return (stash);
@@ -58,9 +57,8 @@ char    *ft_get_line(char *stash)
 	}
     if (stash[i] == '\n')
     {
-        line[i] = '\n'; //Append the newline character if present
-        i++;
-    }		
+        line[i++] = '\n'; //Append the newline character if present
+    }        
 	line[i] = '\0'; //Null-terminate the line
 	return (line);    
 }
@@ -85,7 +83,7 @@ char    *ft_get_new_line(char *stash)
         free(stash);
         return (NULL);
     }
-    newline = (char *)malloc(sizeof(char) * (ft_strlen(stash)) - i + 1); //Allocate memory fo the remaining stash after the newline character
+    newline = (char *)malloc(sizeof(char) * (ft_strlen(stash) - i + 1)); //Allocate memory fo the remaining stash after the newline character
     if (!newline)
         return (NULL);
     i++;
@@ -110,13 +108,12 @@ char    *get_next_line(int  fd)
     char    *line; //line returned in the function
     static char *stash; //static variable allows to store data bwtween function calls;
 
-    if (fd < 0 || BUFFER_SIZE >= 0) //Check if file descriptor is valid and buffer size is positive
+    if (fd < 0 || BUFFER_SIZE <= 0) //Check if file descriptor is valid and buffer size is positive
         return (0);
     stash = ft_read_line(fd, stash); //Read data from the file and update the stash
     if (!stash)
         return (NULL);
-    line =ft_get_line(stash); //extract a line from the stash
+    line = ft_get_line(stash); //extract a line from the stash
     stash = ft_get_new_line(stash); //extract remaining data after the newline character
-    return (line);
-    
+    return (line);    
 }
