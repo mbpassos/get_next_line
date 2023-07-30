@@ -39,10 +39,20 @@ char	*ft_strjoin(char *stash, char const *tmp_buffer)
 		join_content_to_stash[j] = stash[j];
 		j++;
 	}
-	j = -1; // I need to reset j to -1 because I need him to be 0 in the next line. I need it to be i + 0. Suppose: join=Hello buf =World. 
-	while (tmp_buffer[++j])	//Len of join is 5, and I want to copy the position 0 of buf to the position 5 of join. Its the same of initializing j to 0, but I want to reduce 1 line of code, since the function already has 25, and with j = 0 I will have to include another one (j++) surpassing the 25 lines limit allowed by norminette.
+	j = -1; // I need to reset j to -1 because I need him to be 0 in the next line
+	while (tmp_buffer[++j])	
 		join_content_to_stash[i + j] = tmp_buffer[j]; // I need to increment j before using it, because I want to start from 0. I need to use i + j, because I want to start from the end of join variable, taht was copied from the stash. 
 	join_content_to_stash[i + j] = '\0';
 	free(stash);
 	return (join_content_to_stash);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
