@@ -1,4 +1,5 @@
 #include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 // FOR MANDATORY PART
 // int main(void)
