@@ -1,36 +1,36 @@
-#include "get_next_line_bonus.h"
+// #include "get_next_line_bonus.h"
 #include "get_next_line.h"
 
 // FOR MANDATORY PART
-// int main(void)
-// {
-//     int fd1, fd2;
-//     char *line;
-//     fd1 = open("file1.txt", O_RDONLY); // Open file1 for reading
-//     fd2 = open("file2.txt", O_RDONLY); // Open file2 for reading
-//     if (fd1 == -1 || fd2 == -1)
-//     {
-//         perror("Error opening file");
-//         return 1;
-//     }
-//     // Reading lines from file1
-//     printf("Reading lines from file1:\n");
-//     while ((line = get_next_line(fd1)) != NULL)
-//     {
-//         printf("File 1 line: %s\n", line);
-//         free(line);
-//     }
-//     // Reading lines from file2
-//     printf("\nReading lines from file2:\n");
-//     while ((line = get_next_line(fd2)) != NULL)
-//     {
-//         printf("File 2 line: %s\n", line);
-//         free(line);
-//     }
-//     close(fd1); // Close file1
-//     close(fd2); // Close file2
-//     return 0;
-// }
+int main(void)
+{
+    int fd1, fd2;
+    char *line;
+    fd1 = open("file1.txt", O_RDONLY); // Open file1 for reading
+    fd2 = open("file2.txt", O_RDONLY); // Open file2 for reading
+    if (fd1 == -1 || fd2 == -1)
+    {
+        perror("Error opening file");
+        return 1;
+    }
+    // Reading lines from file1
+    printf("Reading lines from file1:\n");
+    while ((line = get_next_line(fd1)) != NULL)
+    {
+        printf("File 1 line: %s\n", line);
+        free(line);
+    }
+    // Reading lines from file2
+    printf("\nReading lines from file2:\n");
+    while ((line = get_next_line(fd2)) != NULL)
+    {
+        printf("File 2 line: %s\n", line);
+        free(line);
+    }
+    close(fd1); // Close file1
+    close(fd2); // Close file2
+    return 0;
+}
 
 // FOR BONUS
 // int main(void)

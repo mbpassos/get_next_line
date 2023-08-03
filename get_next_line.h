@@ -18,6 +18,10 @@
 # include <stdio.h>
 # include <unistd.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 char	*get_next_line(int fd);
 char	*ft_strchr(char *stash, int target);
 char	*ft_read_line(int fd, char *stash);

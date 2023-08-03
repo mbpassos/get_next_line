@@ -6,7 +6,7 @@
 /*   By: mbrito-p <mbrito-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 00:33:11 by mbrito-p          #+#    #+#             */
-/*   Updated: 2023/08/01 00:33:11 by mbrito-p         ###   ########.fr       */
+/*   Updated: 2023/08/02 23:07:47 by mbrito-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strchr(char *stash, int target)
 		if ((unsigned char)stash[i] == (unsigned char)target)
 			return (&stash[i]);
 		i++;
-	}	
+	}
 	return (NULL);
 }
 
